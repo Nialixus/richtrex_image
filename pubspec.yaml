@@ -1,5 +1,5 @@
 name: richtrex_image
-description: An extended package of RichTrex package which is used as decoded Image widget in TextSpan.
+description: An extended package of RichTrex package which is used as a resizable image widget. This supports svg, base64, and other basic image file from internet.
 version: 1.0.0
 homepage: https://github.com/Nialixus/richtrex_image
 

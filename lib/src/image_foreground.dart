@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../richtrex_image.dart';
+
 export 'image_foreground.dart' hide ImageForeground;
 
+/// Foreground selection which is used in [RichTrexImage].
 class ImageForeground extends CustomPainter {
+  /// Foreground painter to display resizable area.
   const ImageForeground(
       {this.color = Colors.black,
       this.size = const Size(12.5, 12.5),
@@ -11,10 +15,10 @@ class ImageForeground extends CustomPainter {
   /// Border color, by default is `0xff000000`.
   final Color color;
 
-  /// Background color of Box, by default is `0xffffffff`.
+  /// Background color of box, by default is `0xffffffff`.
   final Color backgroundColor;
 
-  /// Box Size, by default is `10 x 10`.
+  /// Box size, by default is `12.5 x 12.5`.
   final Size size;
 
   @override

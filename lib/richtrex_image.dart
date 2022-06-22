@@ -1,3 +1,4 @@
+/// An extended package of [RichTrex] packaged, which is used to resizing image.
 library richtrex_image;
 
 import 'dart:convert';
@@ -9,24 +10,44 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'src/image_state.dart';
 import 'src/image_foreground.dart';
 
+/// An extended widget of [RichTrex] package which is used to resize image.
 class RichTrexImage extends StatelessWidget {
+  /// Resizable image widget, support svg, base64, and basic image file from internet.
+  ///
+  /// ```dart
+  /// RichTrexImage(url, size: MediaQuery.of(context).size);
+  /// ```
   const RichTrexImage(this.url,
       {Key? key, required this.size, this.onChanged, this.resize = true})
       : super(key: key);
+
+  /// Image source from internet.
   final String url;
+
+  /// Initial size of image.
   final Size size;
+
+  /// Choose whether user allowed to resize image or not.
+  ///
+  /// By default [resize] is true.
   final bool resize;
+
+  /// Updated [size] onChanged.
   final void Function(Size size)? onChanged;
 
   @override
   Widget build(BuildContext context) {
+    // Error widget displaying broken image icon.
     Widget error = Consumer<RichTrexImageState>(
         builder: (_, value, __) => Icon(
               Icons.image_sharp,
               color: Colors.grey,
               size: value.size.width,
             ));
+
+    // Loading widget displaying circular icon.
     const Widget loading = CircularProgressIndicator();
+
     return ChangeNotifierProvider(
       create: (_) => RichTrexImageState(size: size),
       builder: (stateContext, child) {
@@ -85,7 +106,6 @@ class RichTrexImage extends StatelessWidget {
                     return error;
                   }
                 }
-
                 return error;
               })),
     );
