@@ -33,7 +33,7 @@ RichTrexImage.network(
 );
 ```
 
-or if you're' using image from memory, try this
+or if you're using image from memory, try this
 
 ```dart
 RichTrexImage.memory(
