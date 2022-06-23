@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
             child: Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(kToolbarHeight),
-                child: RichTrexImage(url, size: const Size(100, 100)))),
+                child: RichTrexImage.network(url, size: const Size(100, 100)))),
         bottomSheet: Container(
             height: kToolbarHeight,
             decoration: BoxDecoration(color: Colors.black.withOpacity(0.05)),
