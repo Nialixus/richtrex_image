@@ -13,7 +13,7 @@ Add this line to your pubspec.yaml.
 
 ```yaml
 dependencies:
-  richtrex_image: ^1.1.0
+  richtrex_image: ^1.2.0
 ```
 
 ## Usage

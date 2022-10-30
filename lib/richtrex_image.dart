@@ -83,6 +83,23 @@ class RichTrexImage extends StatelessWidget {
   final String _id;
 
   @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    String type() {
+      if (_id == "network") {
+        return "RichTrexNetworkImage";
+      } else if (_id == "asset") {
+        return "RichTrexAssetImage";
+      } else if (_id == "memory") {
+        return "RichTrexMemoryImage";
+      } else {
+        return "RichTrexFileImage";
+      }
+    }
+
+    return "${type()}(source: $source, size: $size, resize: $resize)";
+  }
+
+  @override
   Widget build(BuildContext context) {
     // Error widget displaying broken image icon.
     Widget error = Consumer<RichTrexImageState>(
